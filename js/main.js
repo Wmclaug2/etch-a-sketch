@@ -22,7 +22,7 @@ function darken(){
 
 function lighten(){
 	var currentDarkness = +$(this).css('opacity');
-	if (currentDarkness > 0) currentDarkness -= .10;
+	if (currentDarkness >= 0) currentDarkness -= .10;
 	$(this).css({"opacity": currentDarkness});
 }
 function createGrid(sqNum){
@@ -53,5 +53,5 @@ function newGrid(){
 	}
 }
 
-$('.erase').on('click', erase);
-$('.draw').on('click', draw);
+$('.erase').off('click').on('click', erase);
+$('.draw').off('click').on('click', draw);
