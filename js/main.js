@@ -16,7 +16,7 @@ function draw(){
 
 function darken(){
 	var currentDarkness = +$(this).css('opacity');
-	if (currentDarkness < 1) currentDarkness += .10;
+	if (currentDarkness <= 1) currentDarkness += .10;
 	$(this).css({"opacity": currentDarkness});
 }
 
