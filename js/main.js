@@ -1,16 +1,17 @@
 $(document).ready(function(){
 	createGrid(16);
 	$(".box").hover(darken);
-
 });
 
 function erase(){
 	$('.erase').toggleClass('draw').toggleClass('erase');
+	$(".box").off('mouseenter mouseleave');
 	$('.box').hover(lighten);
 }
 
 function draw(){
 	$('.erase').toggleClass('erase').toggleClass('draw');
+	$(".box").off('mouseenter mouseleave');
 	$('.box').hover(darken);
 }
 
@@ -53,5 +54,5 @@ function newGrid(){
 	}
 }
 
-$('.erase').off('click').on('click', erase);
-$('.draw').off('click').on('click', draw);
+$('.erase').on('click', erase);
+$('.draw').on('click', draw);
